@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include <locale.h>
 
 int main() {
@@ -6,23 +7,37 @@ int main() {
 
     int y, z;
     double x;
+    int ok = 1;
 
-    printf("Користувач введiть будь ласка y та z: ");
+    printf("Користувач будь ласка введiть y та z: ");
     scanf_s("%d %d", &y, &z);
 
-    if (y < 8)
-        x = y * y * y - z * z;
+    if (y == -8) {
+        if ((z - 2 * y) == 0) {
+            printf("Неможливо обчислити: дiлення на нуль\n");
+            ok = 0;
+        }
+        if ((3.0 * y / (z - 2 * y)) < 0) {
+            printf("Неможливо обчислити: вiд'ємний вираз пiд коренем\n");
+            ok = 0;
+        }
+        if (ok)
+            x = sqrt(3.0 * y / (z - 2 * y));
+    }
 
-    if (y == 15 && (y - z) != 0)
-        x = (double)y / (y - z);
+    if (y == 10)
+        x = y / 2.0 + 15 * z;
 
     if (y == 2)
-        x = y + z;
+        x = y * z - 7 * z;
 
-    if (y == 7)
-        x = y * z - 7;
+    if (y != -8 && y != 10 && y != 2) {
+        printf("Неможливо обчислити: немає вiдповiдної умови\n");
+        ok = 0;
+    }
 
-    printf("x = %.2lf\n", x);
+    if (ok)
+        printf("Результат x = %.2lf\n", x);
 
     return 0;
 }
