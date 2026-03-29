@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, "uk_UA.UTF-8");
+
+    int y, z;
+    double x;
+
+    printf("Користувач введiть будь ласка y та z: ");
+    scanf_s("%d %d", &y, &z);
+
+    if (y < 8)
+        x = y * y * y - z * z;
+
+    if (y == 15 && (y - z) != 0)
+        x = (double)y / (y - z);
+
+    if (y == 2)
+        x = y + z;
+
+    if (y == 7)
+        x = y * z - 7;
+
+    printf("x = %.2lf\n", x);
+
+    return 0;
+}
