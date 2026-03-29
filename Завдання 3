@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, "uk_UA.UTF-8");
+    int n;
+
+    printf("Користувач введiть номер серiї (1-10): ");
+    scanf_s("%d", &n);
+
+    switch (n) {
+    case 1:
+        printf("Серiя 1: Знак помсти - 16.03.2018\n");
+        break;
+    case 2:
+        printf("Серiя 2: Шви з минулого - 16.03.2018\n");
+        break;
+    case 3:
+        printf("Серiя 3: Iдеальна модель - 16.03.2018\n");
+        break;
+    case 4:
+        printf("Серiя 4: Викрите тiло - 16.03.2018\n");
+        break;
+    case 5:
+        printf("Серiя 5: Друга шкiра - 16.03.2018\n");
+        break;
+    case 6:
+        printf("Серiя 6: Пам'ятi мого батька - 16.03.2018\n");
+        break;
+    case 7:
+        printf("Серiя 7: Шлях iстини - 16.03.2018\n");
+        break;
+    case 8:
+        printf("Серiя 8: Цiна мовчання - 16.03.2018\n");
+        break;
+    case 9:
+        printf("Серiя 9: Алiбi - 16.03.2018\n");
+        break;
+    case 10:
+        printf("Серiя 10: Вiд кутюр - 16.03.2018\n");
+        break;
+    default:
+        printf("Невiрний номер серiї\n");
+    }
+
+    return 0;
+}
